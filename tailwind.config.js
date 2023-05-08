@@ -10,7 +10,12 @@ module.exports = {
       xl: '1440px',
     },
     colors: {
-      'primary': '#1fb6ff',
+      'primary': {
+        main: '#2f3542',
+        100: '#f8f9fa',
+        200: '#e9ecef',
+        300: '#dee2e6',
+      },
       'secondary': '#5352ed',
       'danger': '#ff4757',
       'success': '#20bf6b',
