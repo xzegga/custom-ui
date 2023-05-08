@@ -3,6 +3,9 @@
 
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
+import viteTsconfigPaths from 'vite-tsconfig-paths';
+import svgrPlugin from 'vite-plugin-svgr';
+import dns from 'dns';
 
 import { resolve, parse } from 'path';
 import * as fs from 'fs';
@@ -23,6 +26,9 @@ export default defineConfig({
   server: {
     open: true,
     port: 3201,
+  },
+  resolve: {
+    alias: rootPaths,
   },
   test: {
     globals: true,
