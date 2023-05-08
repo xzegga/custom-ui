@@ -3,6 +3,7 @@
     "target": "ESNext",
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "types": ["vite/client", "vite-plugin-svgr/client", "@testing-library/jest-dom", "vitest/globals"],
     "allowJs": false,
     "skipLibCheck": true,
     "esModuleInterop": false,
@@ -18,11 +19,11 @@
     "baseUrl": "src"
   },
   "include": [
-    "src/auto-test-setup.cjs",
     "tailwind.config.js",
     "postcss.config.js",
     "vite.config.ts",
     ".eslintrc.cjs",
+    ".prettierrc.js",    
     "src"],
   "references": [{ "path": "./tsconfig.node.json" }],
   "exclude": ["node_modules", "dist", "lib"]
