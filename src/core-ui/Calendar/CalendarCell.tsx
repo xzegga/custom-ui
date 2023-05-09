@@ -41,22 +41,22 @@ export function CalendarCell({ state, date, currentMonth }: CalendarCellProps) {
         ref={ref}
         hidden={isOutsideMonth}
         className={`w-10 h-10 outline-none group ${isRoundedLeft ? 'rounded-l-full' : ''} ${isRoundedRight ? 'rounded-r-full' : ''} ${
-          isSelected ? (isInvalid ? 'bg-red-300' : 'bg-violet-300') : ''
+          isSelected ? (isInvalid ? 'bg-red-300' : 'bg-teal-300') : ''
         } ${isDisabled ? 'disabled' : ''}`}
       >
         <div
           className={`w-full h-full rounded-full flex items-center justify-center ${isDisabled ? 'text-gray-400' : ''} ${
             // Focus ring, visible while the cell has keyboard focus.
-            isFocusVisible ? 'ring-2 group-focus:z-2 ring-violet-600 ring-offset-2' : ''
+            isFocusVisible ? 'ring-2 group-focus:z-2 ring-teal-600 ring-offset-2' : ''
           } ${
             // Darker selection background for the start and end.
-            isSelectionStart || isSelectionEnd ? 'bg-violet-600 text-white hover:bg-violet-700' : ''
+            isSelectionStart || isSelectionEnd ? 'bg-teal-600 text-white hover:bg-teal-600' : ''
           } ${
             // Hover state for cells in the middle of the range.
-            isSelected && !(isSelectionStart || isSelectionEnd) ? 'hover:bg-violet-400' : ''
+            isSelected && !(isSelectionStart || isSelectionEnd) ? 'hover:bg-teal-400 text-white' : ''
           } ${
             // Hover state for non-selected cells.
-            !isSelected && !isDisabled ? 'hover:bg-violet-100' : ''
+            !isSelected && !isDisabled ? 'hover:bg-teal-100' : ''
           } cursor-default`}
         >
           {formattedDate}

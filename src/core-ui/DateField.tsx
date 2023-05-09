@@ -46,7 +46,7 @@ function DateSegment({ segment, state }: DateSegmentProps) {
         ...segmentProps.style,
         ...(segment.maxValue != null ? { minWidth: String(segment.maxValue).length + "ch" } : {}),
       }}
-      className={`px-0.5 box-content tabular-nums text-right outline-none rounded-sm focus:bg-violet-600 focus:text-white group ${
+      className={`px-0.5 box-content tabular-nums text-right outline-none rounded-sm focus:bg-teal-600 focus:text-white group ${
         !segment.isEditable ? "text-gray-500" : "text-gray-800"
       }`}
     >
