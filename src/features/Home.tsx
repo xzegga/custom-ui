@@ -5,11 +5,13 @@ import { useState } from 'react';
 import { useDateFormatter } from '@react-aria/i18n';
 import { DateValue } from 'react-aria';
 import { RangeValue } from '@react-types/shared';
+import Breadcrumbs from 'core-ui/Breadcrumbs/Breadcrumbs';
 
 function Home() {
   const [date, setDate] = useState<DateValue>(parseDate('2022-07-04'));
   const [rangeDate, setRangeDate] = useState<RangeValue<DateValue>>();
   const formatter = useDateFormatter({ dateStyle: 'full' });
+  const [pages, setPages] = useState<any[]>([{label: 'Management Dashboard', link: '#'}]);
 
   const changeHandler = (value: DateValue) => {
     setDate(value);
@@ -21,6 +23,7 @@ function Home() {
   return (
     <>
       <div className="ml-12 max-w-lg text-gray-700">
+        <Breadcrumbs pages={pages}/>
         <DatePicker label="Appointment date" minValue={today(getLocalTimeZone())} {...{onChange: changeHandler}} />
         <p>Selected date: {formatter.format(date.toDate(getLocalTimeZone()))}</p>
         <br />
