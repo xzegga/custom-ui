@@ -1,17 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useBreadcrumbItem } from 'react-aria';
 import classNames from 'classnames';
 
 const BreadcrumbItem = (props: any) => {
-  const [isHover, setIsHover] = useState<boolean>(false);
   const ref = React.useRef(null);
   const { itemProps } = useBreadcrumbItem(props, ref);
-  const handleMouseEnter = () => {
-    setIsHover(true);
-  };
-  const handleMouseLeave = () => {
-    setIsHover(false);
-  };
   return (
     <li>
       <a
@@ -24,8 +17,6 @@ const BreadcrumbItem = (props: any) => {
           fontWeight: props.isCurrent ? 'bold' : 'light',
           cursor: props.isCurrent || props.isDisabled ? 'default' : 'pointer',
         }}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
       >
         {props.children}
       </a>
