@@ -23,11 +23,13 @@ function Home() {
   return (
     <>
       <div className="ml-12 max-w-lg text-gray-700">
+        <h2 className="mt-12 mb-2 font-bold text-xl text-left">Breadcrumbs</h2>
         <Breadcrumbs pages={pages}/>
+        <h2 className="mt-12 mb-2 font-bold text-xl text-left">Date picker</h2>
         <DatePicker label="Appointment date" minValue={today(getLocalTimeZone())} {...{onChange: changeHandler}} />
         <p>Selected date: {formatter.format(date.toDate(getLocalTimeZone()))}</p>
         <br />
-        <h2 className="mt-12 mb-2 font-bold text-xl text-left">DateRangePicker</h2>
+        <h2 className="mt-12 mb-2 font-bold text-xl text-left">Date range picker</h2>
         <DateRangePicker label="Trip dates" minValue={today(getLocalTimeZone())}  {...{onChange: changeRangeHandler}}/>
         {rangeDate && <>
           <p>Selected dates: 
@@ -35,6 +37,7 @@ function Home() {
           to {formatter.format(rangeDate.end.toDate(getLocalTimeZone()))}
           </p>
         </>}
+        <h2 className="mt-12 mb-2 font-bold text-xl text-left">Date range picker</h2>
       </div>
     </>
   );
