@@ -6,6 +6,7 @@ import { useDateFormatter } from '@react-aria/i18n';
 import { DateValue } from 'react-aria';
 import { RangeValue } from '@react-types/shared';
 import BreadcrumbsNav from 'core-ui/Breadcrumbs/BreadcrumbsNav';
+import Button from 'core-ui/Button/Button';
 
 function Home() {
   const [date, setDate] = useState<DateValue>(parseDate('2022-07-04'));
@@ -41,7 +42,27 @@ function Home() {
           to {formatter.format(rangeDate.end.toDate(getLocalTimeZone()))}
           </p>
         </>}
-        <h2 className="mt-12 mb-2 font-bold text-xl text-left">Date range picker</h2>
+        <h2 className="mt-12 mb-2 font-bold text-xl text-left">Buttons</h2>
+        <br />
+        <Button styling={'rounded bg-primary-900 text-white hover:bg-primary-800'} onClick={()=>alert('Hello :)')}>Primary Btn</Button>
+        <br />
+        <br />
+        <Button styling={'border border-secondary-900 rounded text-secondary-900 bg-white hover:bg-secondary-900 hover:text-white'} onClick={()=>alert('Hello :)')}>Secondary Btn</Button>
+        <br />
+        <br />
+        <Button styling={'rounded bg-danger-900 text-white hover:bg-danger-800'} onClick={()=>alert('Hello :)')}>Danger Btn</Button>
+        <br />
+        <br />
+        <Button styling={'rounded bg-warning-900 text-white hover:bg-warning-800'} onClick={()=>alert('Hello :)')}>Warning Btn</Button>
+        <br />
+        <br />
+        <Button styling={'border border-primary-900 rounded text-primary-900 bg-white hover:bg-primary-900 hover:text-white'} onClick={()=>alert('Hello :)')}>Primary Reverse Btn</Button>
+        <br />
+        <br />
+        <Button styling={'border border-danger-900 rounded text-danger-900 bg-white hover:bg-danger-900 hover:text-white'} onClick={()=>alert('Hello :)')}>Danger Reverse Btn</Button>
+        <br />
+        <br />
+        <Button styling={'border border-warning-900 rounded text-warning-900 bg-white hover:bg-warning-900 hover:text-white'} onClick={()=>alert('Hello :)')}>Warning Reverse Btn</Button>
       </div>
     </>
   );
