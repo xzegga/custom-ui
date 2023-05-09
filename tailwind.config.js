@@ -1,7 +1,9 @@
 /** @type {import('tailwindcss').Config} */
+import colors from 'tailwindcss/colors';
 
 module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+
   theme: {
     screens: {
       sm: '480px',
@@ -10,6 +12,7 @@ module.exports = {
       xl: '1440px',
     },
     colors: {
+      ...colors,
       'primary': {
         600: '#B8E2E6',
         700: '#66C4CC',
@@ -55,22 +58,6 @@ module.exports = {
     },
     fontFamily: {
       'raleway': ['Raleway', 'sans-serif']
-    },
-    extend: {
-      spacing: {
-        '128': '32rem',
-        '144': '36rem',
-      },
-      borderRadius: {
-        '4xl': '2rem',
-      }
-    },
-    borderRadius: {
-      'none': '0',
-      'sm': '.125rem',
-      DEFAULT: '.25rem',
-      'lg': '.5rem',
-      'full': '9999px',
-    },
+    }
   }
 }
