@@ -1,14 +1,27 @@
-import React from 'react'
-import Breadcrumbs from './Breadcrumbs'
-import BreadcrumbItem from './BreadcrumbItem'
+import React from 'react';
+import Breadcrumbs from './Breadcrumbs';
+import BreadcrumbItem from './BreadcrumbItem';
 
-const BreadcrumbsNav = () => {
-  return (
-    <Breadcrumbs>
-        <BreadcrumbItem >Dashboard</BreadcrumbItem>
-        <BreadcrumbItem >Management Dashboard</BreadcrumbItem>
-    </Breadcrumbs>
-  )
+interface BreadcrumbsProps {
+  items: page[];
+}
+interface page {
+  label: string;
+  link: string;
 }
 
-export default BreadcrumbsNav
+const BreadcrumbsNav: React.FC<BreadcrumbsProps> = ({ items }) => {
+  return (
+    <Breadcrumbs>
+      {items.map((item, key) => {
+        return (
+          <BreadcrumbItem onClick={() => alert(item.link)} key={key}>
+            {item.label}
+          </BreadcrumbItem>
+        );
+      })}
+    </Breadcrumbs>
+  );
+};
+
+export default BreadcrumbsNav;
