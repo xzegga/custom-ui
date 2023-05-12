@@ -24,6 +24,7 @@ module.exports = {
     'react/prop-types': 'off',
     '@typescript-eslint/no-explicit-any': 0,
     'tailwindcss/no-custom-classname': 0,
+    'tailwindcss/classnames-order': 0,
     'prettier/prettier': [
       'error',
       {

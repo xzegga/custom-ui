@@ -7,7 +7,7 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx}',
     './node_modules/tw-elements/dist/js/**/*.js',
   ],
-  plugins: [require('tw-elements/dist/plugin.cjs')],
+  // plugins: [require('tw-elements/dist/plugin.cjs')],
   theme: {
     screens: {
       sm: '480px',
@@ -18,10 +18,17 @@ module.exports = {
     colors: {
       ...colors,
       primary: {
-        600: '#B8E2E6',
-        700: '#66C4CC',
-        800: '#2E9099',
-        900: '#00656E',
+        50: '#f0fbfb',
+        100: '#d9f3f4',
+        200: '#b7e8ea',
+        300: '#85d6db',
+        400: '#66c4cc',
+        500: '#319ea9',
+        600: '#2b808f',
+        700: '#296975',
+        800: '#295761',
+        900: '#264953',
+        950: '#143038',
       },
       secondary: {
         600: '#E5E6E5',
@@ -30,10 +37,17 @@ module.exports = {
         900: '#666666',
       },
       danger: {
-        600: '#FFCCD8',
-        700: '#FA7D9A',
-        800: '#E64564',
-        900: '#D30030',
+        50: '#ffefef',
+        100: '#ffdcdc',
+        200: '#ffbfbf',
+        300: '#ff9292',
+        400: '#ff5454',
+        500: '#ff1f1f',
+        600: '#ff0000',
+        700: '#db0000',
+        800: '#af0000',
+        900: '#940808',
+        950: '#520000',
       },
       warning: {
         600: '#FFF6CD',
@@ -64,4 +78,11 @@ module.exports = {
       raleway: ['Raleway', 'sans-serif'],
     },
   },
+  safelist: [
+    'bg-primary',
+    {
+      pattern: /bg-(primary|secondary|danger|warning|success|info)-(400|700)/,
+      variants: ['hover', 'focus', 'active'],
+    },
+  ],
 };
