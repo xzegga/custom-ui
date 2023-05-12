@@ -1,7 +1,11 @@
-import { useCalendarGrid, useLocale } from "react-aria";
-import { getWeeksInMonth, endOfMonth, DateDuration } from "@internationalized/date";
-import { CalendarCell } from "./CalendarCell";
-import { CalendarState, RangeCalendarState } from "react-stately";
+import { useCalendarGrid, useLocale } from 'react-aria';
+import {
+  getWeeksInMonth,
+  endOfMonth,
+  DateDuration,
+} from '@internationalized/date';
+import { CalendarCell } from './CalendarCell';
+import { CalendarState, RangeCalendarState } from 'react-stately';
 
 interface CalendarGridProps {
   state: RangeCalendarState | CalendarState;
@@ -13,10 +17,13 @@ export function CalendarGrid({ state, offset = {} }: CalendarGridProps) {
   const startDate = state.visibleRange.start.add(offset);
   const endDate = endOfMonth(startDate);
 
-  const { gridProps, headerProps, weekDays } = useCalendarGrid({
-    startDate,
-    endDate
-  }, state);
+  const { gridProps, headerProps, weekDays } = useCalendarGrid(
+    {
+      startDate,
+      endDate,
+    },
+    state
+  );
 
   // Get the number of weeks in the month so we can render the proper number of rows.
   const weeksInMonth = getWeeksInMonth(startDate, locale);
@@ -39,7 +46,12 @@ export function CalendarGrid({ state, offset = {} }: CalendarGridProps) {
               .getDatesInWeek(weekIndex, startDate)
               .map((date, i) =>
                 date ? (
-                  <CalendarCell key={i} state={state} date={date} currentMonth={startDate}/>
+                  <CalendarCell
+                    key={i}
+                    state={state}
+                    date={date}
+                    currentMonth={startDate}
+                  />
                 ) : (
                   <td key={i} />
                 )

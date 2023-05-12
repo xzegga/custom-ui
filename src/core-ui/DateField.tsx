@@ -1,13 +1,17 @@
-import { useRef } from "react";
+import { useRef } from 'react';
 import {
   AriaDatePickerProps,
   DateValue,
   useDateField,
   useDateSegment,
   useLocale,
-} from "react-aria";
-import { createCalendar } from "@internationalized/date";
-import { DateFieldState, useDateFieldState, DateSegment as DtSegment} from "react-stately";
+} from 'react-aria';
+import { createCalendar } from '@internationalized/date';
+import {
+  DateFieldState,
+  useDateFieldState,
+  DateSegment as DtSegment,
+} from 'react-stately';
 
 export function DateField(props: AriaDatePickerProps<DateValue>) {
   const { locale } = useLocale();
@@ -44,10 +48,12 @@ function DateSegment({ segment, state }: DateSegmentProps) {
       ref={ref}
       style={{
         ...segmentProps.style,
-        ...(segment.maxValue != null ? { minWidth: String(segment.maxValue).length + "ch" } : {}),
+        ...(segment.maxValue != null
+          ? { minWidth: String(segment.maxValue).length + 'ch' }
+          : {}),
       }}
-      className={`px-0.5 box-content tabular-nums text-right outline-none rounded-sm focus:bg-teal-600 focus:text-white group ${
-        !segment.isEditable ? "text-gray-500" : "text-gray-800"
+      className={`group box-content rounded-sm px-0.5 text-right tabular-nums outline-none focus:bg-teal-600 focus:text-white ${
+        !segment.isEditable ? 'text-gray-500' : 'text-gray-800'
       }`}
     >
       {/* Always reserve space for the placeholder, to prevent layout shift when editing. */}
@@ -55,14 +61,14 @@ function DateSegment({ segment, state }: DateSegmentProps) {
         aria-hidden="true"
         className="block w-full text-center italic text-gray-500 group-focus:text-white"
         style={{
-          ...(segment.isPlaceholder ? {} : {visibility: "hidden"}),
-          height: segment.isPlaceholder ? "" : 0,
-          pointerEvents: "none",
+          ...(segment.isPlaceholder ? {} : { visibility: 'hidden' }),
+          height: segment.isPlaceholder ? '' : 0,
+          pointerEvents: 'none',
         }}
       >
         {segment.placeholder}
       </span>
-      {segment.isPlaceholder ? "" : segment.text}
+      {segment.isPlaceholder ? '' : segment.text}
     </div>
   );
 }

@@ -1,5 +1,10 @@
-import { useRef } from "react";
-import { useButton, useFocusRing, AriaButtonProps, mergeProps } from "react-aria";
+import { useRef } from 'react';
+import {
+  useButton,
+  useFocusRing,
+  AriaButtonProps,
+  mergeProps,
+} from 'react-aria';
 
 interface CalendarButtonProps extends AriaButtonProps {
   isDisabled?: boolean;
@@ -14,10 +19,10 @@ export function CalendarButton(props: CalendarButtonProps) {
     <button
       {...mergeProps(buttonProps, focusProps)}
       ref={ref}
-      className={`p-2 rounded-full ${props.isDisabled ? "text-gray-400" : ""} ${
-        !props.isDisabled ? "hover:bg-teal-100 active:bg-teal-200" : ""
+      className={`rounded-full p-2 ${props.isDisabled ? 'text-gray-400' : ''} ${
+        !props.isDisabled ? 'hover:bg-teal-100 active:bg-teal-200' : ''
       } outline-none ${
-        isFocusVisible ? "ring-2 ring-offset-2 ring-purple-600" : ""
+        isFocusVisible ? 'ring-2 ring-purple-600 ring-offset-2' : ''
       }`}
     >
       {props.children}
@@ -37,10 +42,10 @@ export function FieldButton(props: FieldButtonProps) {
     <button
       {...buttonProps}
       ref={ref}
-      className={`px-2 -ml-px border transition-colors rounded-r-md group-focus-within:border-teal-600 group-focus-within:group-hover:border-teal-600 outline-none ${
+      className={`-ml-px rounded-r-md border px-2 outline-none transition-colors group-focus-within:border-teal-600 group-focus-within:group-hover:border-teal-600 ${
         isPressed || props.isPressed
-          ? "bg-gray-200 border-gray-400"
-          : "bg-gray-50 border-gray-300 group-hover:border-gray-400"
+          ? 'border-gray-400 bg-gray-200'
+          : 'border-gray-300 bg-gray-50 group-hover:border-gray-400'
       }`}
     >
       {props.children}

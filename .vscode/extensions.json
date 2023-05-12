@@ -1,10 +1,12 @@
 {
-    "recommendations": [
-        "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode",
-        "formulahendry.auto-complete-tag",
-        "formulahendry.auto-rename-tag",
-        "shardulm94.trailing-spaces",
-        "vscode-icons-team.vscode-icons"
-    ],
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "formulahendry.auto-complete-tag",
+    "formulahendry.auto-rename-tag",
+    "shardulm94.trailing-spaces",
+    "vscode-icons-team.vscode-icons",
+    "bradlc.vscode-tailwindcss",
+    "heybourn.headwind"
+  ]
 }

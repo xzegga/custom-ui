@@ -2,9 +2,9 @@
 
 import { aliases } from './vite.config';
 
-const mappedAliases = Object.entries(aliases).map((entry) => entry); // [[alias, path], [alias, path], ...]
+const mappedAliases = Object.entries(aliases).map((entry) => entry);
 
-export default {
+const config = {
   // ...
   settings: {
     'import/resolver': {
@@ -14,3 +14,5 @@ export default {
     },
   },
 };
+
+export default config;

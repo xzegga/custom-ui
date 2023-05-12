@@ -3,7 +3,5 @@ import './App.css';
 import Home from './features/Home';
 
 export function App() {
-  return (
-      <Home />
-  );
+  return <Home />;
 }

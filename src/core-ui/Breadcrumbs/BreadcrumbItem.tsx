@@ -8,12 +8,15 @@ const BreadcrumbItem = (props: any) => {
   return (
     <li>
       <a
-      className={classNames({'hover:text-primary-900': !props.isCurrent && !props.isDisabled})}
+        className={classNames({
+          'hover:text-primary-900': !props.isCurrent && !props.isDisabled,
+        })}
         {...itemProps}
         ref={ref}
         href={props.href}
         style={{
-          textDecoration: props.isCurrent || props.isDisabled ? 'none' : 'underline',
+          textDecoration:
+            props.isCurrent || props.isDisabled ? 'none' : 'underline',
           fontWeight: props.isCurrent ? 'bold' : 'light',
           cursor: props.isCurrent || props.isDisabled ? 'default' : 'pointer',
         }}

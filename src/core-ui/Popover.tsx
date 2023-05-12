@@ -1,7 +1,7 @@
-import * as React from "react";
-import { usePopover, DismissButton, Overlay } from "@react-aria/overlays";
-import { OverlayTriggerState } from "react-stately";
-import { RefObject } from "react";
+import * as React from 'react';
+import { usePopover, DismissButton, Overlay } from '@react-aria/overlays';
+import { OverlayTriggerState } from 'react-stately';
+import { RefObject } from 'react';
 
 interface PopoverProps {
   triggerRef: RefObject<Element>;
@@ -9,7 +9,7 @@ interface PopoverProps {
   children: React.ReactNode;
 }
 
-export function Popover({ state, children, ...props} : PopoverProps) {
+export function Popover({ state, children, ...props }: PopoverProps) {
   const ref = React.useRef<HTMLDivElement>(null);
 
   const { popoverProps, underlayProps } = usePopover(
@@ -26,10 +26,10 @@ export function Popover({ state, children, ...props} : PopoverProps) {
       <div
         {...(popoverProps as PopoverProps)}
         ref={ref}
-        className="absolute top-full bg-white border border-gray-300 rounded-md shadow-lg mt-2 p-8 z-10"
+        className="absolute top-full z-10 mt-2 rounded-md border border-gray-300 bg-white p-8 shadow-lg"
       >
         <DismissButton onDismiss={state.close} />
-          {children}
+        {children}
         <DismissButton onDismiss={state.close} />
       </div>
     </Overlay>

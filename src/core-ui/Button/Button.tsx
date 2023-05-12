@@ -22,7 +22,9 @@ const Button = (props: any) => {
 
   return (
     <span
-      className={classNames(styles, {'focus-visible: outline-info-700': true})}
+      className={classNames(styles, {
+        'focus-visible: outline-info-700': true,
+      })}
       {...buttonProps}
       style={{
         padding: 10,

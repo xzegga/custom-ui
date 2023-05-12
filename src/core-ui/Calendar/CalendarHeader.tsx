@@ -1,24 +1,25 @@
-import { useDateFormatter } from "@react-aria/i18n";
-import { CalendarButton } from "../Button";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
-import { VisuallyHidden } from "@react-aria/visually-hidden";
-import { CalendarAria, DateFormatter } from "react-aria";
-import { RangeCalendarState } from "react-stately";
+import { useDateFormatter } from '@react-aria/i18n';
+import { CalendarButton } from '../Button';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+import { VisuallyHidden } from '@react-aria/visually-hidden';
+import { CalendarAria, DateFormatter } from 'react-aria';
+import { RangeCalendarState } from 'react-stately';
 
-interface CalendarHeaderProps extends Omit<CalendarAria, 'errorMessageProps'|'title'> {
-    state: RangeCalendarState;
+interface CalendarHeaderProps
+  extends Omit<CalendarAria, 'errorMessageProps' | 'title'> {
+  state: RangeCalendarState;
 }
 
 export function CalendarHeader({
   state,
   calendarProps,
   prevButtonProps,
-  nextButtonProps
+  nextButtonProps,
 }: CalendarHeaderProps) {
   const monthDateFormatter: DateFormatter = useDateFormatter({
-    month: "long",
-    year: "numeric",
-    timeZone: state.timeZone
+    month: 'long',
+    year: 'numeric',
+    timeZone: state.timeZone,
   });
 
   return (
@@ -29,7 +30,7 @@ export function CalendarHeader({
        * In addition, VoiceOver on iOS does not announce the aria-label of the grid
        * elements, so the aria-label of the Calendar is included here as well. */}
       <VisuallyHidden>
-        <h2>{calendarProps["aria-label"]}</h2>
+        <h2>{calendarProps['aria-label']}</h2>
       </VisuallyHidden>
       <CalendarButton {...prevButtonProps}>
         <ChevronLeftIcon className="h-6 w-6" />
@@ -39,7 +40,7 @@ export function CalendarHeader({
         // and the calendar itself describes the individual month
         // so we don't need to repeat that here for screen reader users.
         aria-hidden
-        className="flex-1 align-center font-bold text-xl text-center"
+        className="align-center flex-1 text-center text-xl font-bold"
       >
         {monthDateFormatter.format(
           state.visibleRange.start.toDate(state.timeZone)
@@ -47,7 +48,7 @@ export function CalendarHeader({
       </h2>
       <h2
         aria-hidden
-        className="flex-1 align-center font-bold text-xl text-center"
+        className="align-center flex-1 text-center text-xl font-bold"
       >
         {monthDateFormatter.format(
           state.visibleRange.start.add({ months: 1 }).toDate(state.timeZone)

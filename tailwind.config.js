@@ -2,8 +2,12 @@
 import colors from 'tailwindcss/colors';
 
 module.exports = {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
-
+  content: [
+    './index.html', 
+    './src/**/*.{js,ts,jsx,tsx}',
+    "./node_modules/tw-elements/dist/js/**/*.js"
+  ],
+  plugins: [require("tw-elements/dist/plugin.cjs")],
   theme: {
     screens: {
       sm: '480px',
