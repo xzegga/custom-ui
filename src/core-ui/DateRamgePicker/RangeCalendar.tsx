@@ -22,14 +22,14 @@ export function RangeMultipleCalendar(props: RangeCalendarProps<DateValue>) {
     useRangeCalendar(props, state, ref);
 
   return (
-    <div {...calendarProps} ref={ref} className="inline-block text-gray-800">
+    <div {...calendarProps} ref={ref} className='inline-block text-gray-800'>
       <CalendarHeader
         state={state}
         calendarProps={calendarProps}
         prevButtonProps={prevButtonProps}
         nextButtonProps={nextButtonProps}
       />
-      <div className="flex gap-8">
+      <div className='flex gap-8'>
         <CalendarGrid state={state} />
         <CalendarGrid state={state} {...{ offset: { months: 1 } }} />
       </div>

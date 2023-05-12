@@ -29,12 +29,12 @@ function Home() {
   };
   return (
     <>
-      <div className="ml-12 max-w-lg text-gray-700">
-        <h2 className="mb-2 mt-12 text-left text-xl font-bold">Breadcrumbs</h2>
+      <div className='ml-12 max-w-lg text-gray-700'>
+        <h2 className='mb-2 mt-12 text-left text-xl font-bold'>Breadcrumbs</h2>
         <BreadcrumbsNav items={pages} />
-        <h2 className="mb-2 mt-12 text-left text-xl font-bold">Date picker</h2>
+        <h2 className='mb-2 mt-12 text-left text-xl font-bold'>Date picker</h2>
         <DatePicker
-          label="Appointment date"
+          label='Appointment date'
           minValue={today(getLocalTimeZone())}
           {...{ onChange: changeHandler }}
         />
@@ -42,11 +42,11 @@ function Home() {
           Selected date: {formatter.format(date.toDate(getLocalTimeZone()))}
         </p>
         <br />
-        <h2 className="mb-2 mt-12 text-left text-xl font-bold">
+        <h2 className='mb-2 mt-12 text-left text-xl font-bold'>
           Date range picker
         </h2>
         <DateRangePicker
-          label="Trip dates"
+          label='Trip dates'
           minValue={today(getLocalTimeZone())}
           {...{ onChange: changeRangeHandler }}
         />
@@ -60,12 +60,19 @@ function Home() {
             </p>
           </>
         )}
-        <h2 className="mb-2 mt-12 text-left text-xl font-bold">Buttons</h2>
+        <h2 className='mb-2 mt-12 text-left text-xl font-bold'>Buttons</h2>
         <button
-          type="button"
+          type='button'
           data-te-ripple-init
-          data-te-ripple-color="light"
-          className="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+          data-te-ripple-color='light'
+          // eslint-disable-next-line prettier/prettier
+          className='bg-primary rounded px-6 pb-2 pt-2.5 
+            font-medium uppercase 
+            leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca]
+            transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] 
+            focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] 
+            dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]
+            dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]'
         >
           Button
         </button>

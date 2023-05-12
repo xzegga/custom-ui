@@ -17,14 +17,14 @@ export function Calendar(props: CalendarProps<DateValue>): JSX.Element {
     useCalendar(props, state);
 
   return (
-    <div {...calendarProps} className="inline-block text-gray-800">
-      <div className="flex items-center pb-4">
-        <h2 className="ml-2 flex-1 text-xl font-bold">{title}</h2>
+    <div {...calendarProps} className='inline-block text-gray-800'>
+      <div className='flex items-center pb-4'>
+        <h2 className='ml-2 flex-1 text-xl font-bold'>{title}</h2>
         <CalendarButton {...prevButtonProps}>
-          <ChevronLeftIcon className="h-6 w-6" />
+          <ChevronLeftIcon className='h-6 w-6' />
         </CalendarButton>
         <CalendarButton {...nextButtonProps}>
-          <ChevronRightIcon className="h-6 w-6" />
+          <ChevronRightIcon className='h-6 w-6' />
         </CalendarButton>
       </div>
       <CalendarGrid state={state} />

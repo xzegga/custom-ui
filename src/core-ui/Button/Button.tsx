@@ -5,7 +5,7 @@ import { useButton } from 'react-aria';
 const Button = (props: any) => {
   const { children } = props;
   const ref = useRef({} as HTMLButtonElement);
-  const { buttonProps, isPressed } = useButton(
+  const { buttonProps } = useButton(
     {
       ...props,
       elementType: 'span',

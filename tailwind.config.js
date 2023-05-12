@@ -3,11 +3,11 @@ import colors from 'tailwindcss/colors';
 
 module.exports = {
   content: [
-    './index.html', 
+    './index.html',
     './src/**/*.{js,ts,jsx,tsx}',
-    "./node_modules/tw-elements/dist/js/**/*.js"
+    './node_modules/tw-elements/dist/js/**/*.js',
   ],
-  plugins: [require("tw-elements/dist/plugin.cjs")],
+  plugins: [require('tw-elements/dist/plugin.cjs')],
   theme: {
     screens: {
       sm: '480px',
@@ -17,37 +17,37 @@ module.exports = {
     },
     colors: {
       ...colors,
-      'primary': {
+      primary: {
         600: '#B8E2E6',
         700: '#66C4CC',
         800: '#2E9099',
         900: '#00656E',
       },
-      'secondary': {
+      secondary: {
         600: '#E5E6E5',
         700: '#CCCCCC',
         800: '#999999',
         900: '#666666',
       },
-      'danger': {
+      danger: {
         600: '#FFCCD8',
         700: '#FA7D9A',
         800: '#E64564',
         900: '#D30030',
       },
-      'warning': {
+      warning: {
         600: '#FFF6CD',
         700: '#FFE780',
         800: '#FFDC4D',
         900: '#FFC000',
       },
-      'success': {
+      success: {
         600: '#B7E5C4',
         700: '#66CC83',
         800: '#2E994D',
         900: '#337D4C',
       },
-      'info': {
+      info: {
         600: '#B8D7E6',
         700: '#66ACCC',
         800: '#2E7899',
@@ -61,7 +61,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      'raleway': ['Raleway', 'sans-serif']
-    }
-  }
-}
+      raleway: ['Raleway', 'sans-serif'],
+    },
+  },
+};

@@ -24,7 +24,7 @@ const BreadcrumbItem = (props: any) => {
         {props.children}
       </a>
       {!props.isCurrent && (
-        <span aria-hidden="true" style={{ padding: '0 5px' }}>
+        <span aria-hidden='true' style={{ padding: '0 5px' }}>
           {'›'}
         </span>
       )}

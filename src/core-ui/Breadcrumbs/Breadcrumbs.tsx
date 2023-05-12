@@ -6,7 +6,7 @@ const Breadcrumbs = (props: any) => {
   const childCount = React.Children.count(props.children);
 
   return (
-    <nav className="my-5" {...navProps}>
+    <nav className='my-5' {...navProps}>
       <ol style={{ display: 'flex', listStyle: 'none', margin: 0, padding: 0 }}>
         {React.Children.map(props.children, (child, i) =>
           React.cloneElement(child, { isCurrent: i === childCount - 1 })

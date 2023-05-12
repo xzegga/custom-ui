@@ -25,7 +25,7 @@ export function DateField(props: AriaDatePickerProps<DateValue>) {
   const { fieldProps } = useDateField(props, state, ref);
 
   return (
-    <div {...fieldProps} ref={ref} className="flex">
+    <div {...fieldProps} ref={ref} className='flex'>
       {state.segments.map((segment, i) => (
         <DateSegment key={i} segment={segment} state={state} />
       ))}
@@ -58,8 +58,8 @@ function DateSegment({ segment, state }: DateSegmentProps) {
     >
       {/* Always reserve space for the placeholder, to prevent layout shift when editing. */}
       <span
-        aria-hidden="true"
-        className="block w-full text-center italic text-gray-500 group-focus:text-white"
+        aria-hidden='true'
+        className='block w-full text-center italic text-gray-500 group-focus:text-white'
         style={{
           ...(segment.isPlaceholder ? {} : { visibility: 'hidden' }),
           height: segment.isPlaceholder ? '' : 0,

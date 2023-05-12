@@ -22,11 +22,11 @@ export function Popover({ state, children, ...props }: PopoverProps) {
 
   return (
     <Overlay>
-      <div {...underlayProps} className="fixed inset-0" />
+      <div {...underlayProps} className='fixed inset-0' />
       <div
         {...(popoverProps as PopoverProps)}
         ref={ref}
-        className="absolute top-full z-10 mt-2 rounded-md border border-gray-300 bg-white p-8 shadow-lg"
+        className='absolute top-full z-10 mt-2 rounded-md border border-gray-300 bg-white p-8 shadow-lg'
       >
         <DismissButton onDismiss={state.close} />
         {children}

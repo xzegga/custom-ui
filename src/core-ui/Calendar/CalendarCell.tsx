@@ -77,16 +77,14 @@ export function CalendarCell({ state, date, currentMonth }: CalendarCellProps) {
           isRoundedLeft ? 'rounded-l-full' : ''
         } ${isRoundedRight ? 'rounded-r-full' : ''} ${
           isSelected ? (isInvalid ? 'bg-red-300' : 'bg-teal-300') : ''
-        } ${isDisabled ? 'disabled' : ''}`}
+        } ${isDisabled ? 'disabled:bg-gray-400' : ''}`}
       >
         <div
           className={`flex h-full w-full items-center justify-center rounded-full ${
             isDisabled ? 'text-gray-400' : ''
           } ${
             // Focus ring, visible while the cell has keyboard focus.
-            isFocusVisible
-              ? 'group-focus:z-2 ring-2 ring-teal-600 ring-offset-2'
-              : ''
+            isFocusVisible ? 'ring-teal-600 ring-offset-2 focus:ring-2' : ''
           } ${
             // Darker selection background for the start and end.
             isSelectionStart || isSelectionEnd
