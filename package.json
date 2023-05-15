@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "env-cmd -f .env vite",
+    "dev": "env-cmd -f .env vite --port 3201 --strictPort",
     "build": "tsc && vite build",
-    "preview": "vite preview",
+    "serve": "vite preview --port 3201 --strictPort",
     "test": "vitest",
     "lint": "npx eslint src",
     "lint:fix": "npm run lint -- --fix",
@@ -23,10 +23,12 @@
     "react": "^18.2.0",
     "react-aria": "^3.24.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.11.1",
     "react-stately": "^3.22.0",
     "tw-elements": "^1.0.0-beta2"
   },
   "devDependencies": {
+    "@originjs/vite-plugin-federation": "^1.2.2",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@types/react": "^18.0.28",

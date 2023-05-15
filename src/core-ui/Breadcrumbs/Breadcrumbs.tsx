@@ -1,19 +1,56 @@
-import React from 'react';
-import { useBreadcrumbs } from 'react-aria';
+import { Link } from 'react-router-dom';
 
-const Breadcrumbs = (props: any) => {
-  const { navProps } = useBreadcrumbs(props);
-  const childCount = React.Children.count(props.children);
-
+export function Breadcrumbs({
+  items,
+  current,
+  ...props
+}: {
+  items: {
+    label: string;
+    path: string;
+  }[];
+  current: string;
+  [key: string]: any;
+}) {
+  const { className: classes } = props;
   return (
-    <nav className='my-5' {...navProps}>
-      <ol style={{ display: 'flex', listStyle: 'none', margin: 0, padding: 0 }}>
-        {React.Children.map(props.children, (child, i) =>
-          React.cloneElement(child, { isCurrent: i === childCount - 1 })
-        )}
-      </ol>
-    </nav>
+    <>
+      <nav className='w-full rounded-md'>
+        <ol className='list-reset flex'>
+          {items.map((item, key) => {
+            return (
+              <div key={key}>
+                {current !== item.path ? (
+                  <Link
+                    to={item.path}
+                    className={`text-neutral transition duration-150 ease-in-out
+                    hover:text-neutral-600 
+                    focus:text-neutral-600 
+                    active:text-neutral-700 
+                    dark:text-neutral-500 
+                    dark:hover:text-neutral-500
+                    dark:focus:text-neutral-500
+                    dark:active:text-neutral-600
+                    ${classes}`}
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <span className='text-neutral-800 dark:text-neutral-400'>
+                    {item.label}
+                  </span>
+                )}
+                {/* Separator */}
+                {key < items.length - 1 ? (
+                  <span className='mx-2 text-neutral-500 dark:text-neutral-500'>
+                    /
+                  </span>
+                ) : null}
+              </div>
+            );
+          })}
+        </ol>
+      </nav>
+    </>
   );
-};
-
-export default Breadcrumbs;
+}

@@ -1,8 +1,8 @@
-import { DatePicker, DateRangePicker } from 'core-ui';
-import BreadcrumbsNav from 'core-ui/Breadcrumbs/BreadcrumbsNav';
-import Button from 'core-ui/Button/Button';
+
+import { Button } from 'core-ui/Button/Button';
 import { useState } from 'react';
 import { DateValue } from 'react-aria';
+import { Breadcrumbs } from 'core-ui/BreadCrumbs/Breadcrumbs';
 
 import { getLocalTimeZone, parseDate, today } from '@internationalized/date';
 import { useDateFormatter } from '@react-aria/i18n';
@@ -12,9 +12,11 @@ function Home() {
   const [date, setDate] = useState<DateValue>(parseDate('2022-07-04'));
   const [rangeDate, setRangeDate] = useState<RangeValue<DateValue>>();
   const formatter = useDateFormatter({ dateStyle: 'full' });
+
+  const current = '../link/managedashboard';
   const [pages] = useState<any[]>([
-    { label: 'Dashboard', link: '../link/dashboard' },
-    { label: 'Management Dashboard', link: '../link/managedashboard' },
+    { label: 'Dashboard', path: '../link/dashboard' },
+    { label: 'Management Dashboard', path: '../link/managedashboard' },
   ]);
 
   const changeHandler = (value: DateValue) => {
@@ -28,14 +30,15 @@ function Home() {
     <>
       <div className='ml-12 max-w-lg text-gray-700'>
         <h2 className='mb-2 mt-12 text-left text-xl font-bold'>Breadcrumbs</h2>
-        <BreadcrumbsNav items={pages} />
-        <h2 className='mb-2 mt-12 text-left text-xl font-bold'>Date picker</h2>
+        <Breadcrumbs items={pages} current={current} />
+
+        {/* <h2 className='mb-2 mt-12 text-left text-xl font-bold'>Date picker</h2>
         <DatePicker
           label='Appointment date'
           minValue={today(getLocalTimeZone())}
           {...{ onChange: changeHandler }}
-        />
-        <p>
+        /> */}
+        {/* <p>
           Selected date: {formatter.format(date.toDate(getLocalTimeZone()))}
         </p>
         <br />
@@ -46,7 +49,7 @@ function Home() {
           label='Trip dates'
           minValue={today(getLocalTimeZone())}
           {...{ onChange: changeRangeHandler }}
-        />
+        /> */}
         {rangeDate && (
           <>
             <p>
@@ -58,10 +61,8 @@ function Home() {
           </>
         )}
         <h2 className='mb-2 mt-12 text-left text-xl font-bold'>Buttons</h2>
-        <Button color='primary' ripple='light' className='mx-2'>
-          Primary
-        </Button>
-        <Button color='danger' ripple='light' className='mx-2'>
+        <Button color='primary'>Primary</Button>
+        <Button color='danger' className='mx-2'>
           Secondary
         </Button>
         <Button className='mx-2'>Secondary</Button>

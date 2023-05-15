@@ -1,0 +1,83 @@
+{
+  "_Breadcrumbs-3f91544d.js": {
+    "file": "assets/Breadcrumbs-3f91544d.js",
+    "imports": [
+      "virtual:__federation_fn_import",
+      "_index-1bb3fecd.js"
+    ]
+  },
+  "_index-1bb3fecd.js": {
+    "file": "assets/index-1bb3fecd.js"
+  },
+  "_index-d932f679.js": {
+    "file": "assets/index-d932f679.js",
+    "imports": [
+      "_index-1bb3fecd.js"
+    ]
+  },
+  "_preload-helper-101896b7.js": {
+    "file": "assets/preload-helper-101896b7.js"
+  },
+  "index.html": {
+    "file": "assets/index-ab73fb80.js",
+    "imports": [
+      "virtual:__federation_fn_import",
+      "_Breadcrumbs-3f91544d.js",
+      "_index-d932f679.js"
+    ],
+    "isEntry": true,
+    "src": "index.html"
+  },
+  "node_modules/react-dom/index.js?commonjs-entry": {
+    "file": "assets/__federation_shared_react-dom.js",
+    "imports": [
+      "_index-d932f679.js"
+    ],
+    "isEntry": true,
+    "src": "node_modules/react-dom/index.js?commonjs-entry"
+  },
+  "node_modules/react-router-dom/dist/index.js": {
+    "file": "assets/__federation_shared_react-router-dom.js",
+    "imports": [
+      "virtual:__federation_fn_import"
+    ],
+    "isEntry": true,
+    "src": "node_modules/react-router-dom/dist/index.js"
+  },
+  "node_modules/react/index.js?commonjs-entry": {
+    "file": "assets/__federation_shared_react.js",
+    "imports": [
+      "_index-1bb3fecd.js"
+    ],
+    "isEntry": true,
+    "src": "node_modules/react/index.js?commonjs-entry"
+  },
+  "src/core-ui/index.tsx": {
+    "file": "assets/__federation_expose_Ui-c69eb462.js",
+    "imports": [
+      "_Breadcrumbs-3f91544d.js"
+    ],
+    "isEntry": true,
+    "src": "src/core-ui/index.tsx"
+  },
+  "style.css": {
+    "file": "assets/style-fac05077.css",
+    "src": "style.css"
+  },
+  "virtual:__federation_fn_import": {
+    "file": "assets/__federation_fn_import.js",
+    "imports": [
+      "_preload-helper-101896b7.js"
+    ],
+    "isEntry": true,
+    "src": "virtual:__federation_fn_import"
+  },
+  "virtual:__remoteEntryHelper__": {
+    "file": "assets/remoteEntry.js",
+    "imports": [
+      "_preload-helper-101896b7.js"
+    ],
+    "isEntry": true,
+    "src": "virtual:__remoteEntryHelper__"
+  }
+}
